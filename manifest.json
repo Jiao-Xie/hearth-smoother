@@ -1,0 +1,84 @@
+{
+   "info": {
+      "name": "Hearth Smoother v0.10.25 (Experimental)",
+      "namespace": "hearth_smoother",
+      "version": 3,
+      "default_enabled": true,
+      "steam_file_id": "3821022445"
+   },
+   "author": "Local performance experiment",
+   "dependencies": [
+      "radiant",
+      "stonehearth"
+   ],
+   "server_init_script": "file(hearth_smoother_server)",
+   "client_init_script": "file(hearth_smoother_client)",
+   "functions": {
+      "get_status": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_enabled": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "configure": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_restock_cleanup": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "profile_functions": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_work_optimization": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_farm_sunlight_slice": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_restock_bootstrap": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "get_growth_status": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_astar_callback": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "get_pathfinder_status": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "set_astar_start_stagger": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "profile_pathfinding": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      },
+      "get_idle_status": {
+         "controller": "file(call_handlers/smoother_call_handler.lua)",
+         "endpoint": "server"
+      }
+   },
+   "ui": {
+      "js": [
+         "file(ui/trace_lifetime_guard.js)",
+         "file(ui/promotion_lifetime_guard.js)"
+      ]
+   },
+   "overrides": {
+      "radiant/js/radiant/object.js": "file(ui/event_pump/object.js)"
+   }
+}
+
